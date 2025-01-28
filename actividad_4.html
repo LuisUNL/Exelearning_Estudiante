@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Actividad 4 | Robot SpiderBot </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Luis Torres, Lilia Luzuriaga, David Jiménez, Roger Paz, Melany Benitez, Cristhian Guachizaca" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-22"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Robot SpiderBot</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li><a href="ndice.html" class="no-ch">Índice</a></li>
+   <li><a href="ttulo_del_proyecto.html" class="no-ch">Título del proyecto</a></li>
+   <li class="current-page-parent"><a href="descripcin_del_proyecto.html" class="current-page-parent daddy">Descripción del proyecto</a>
+   <ul>
+      <li><a href="contenido.html" class="daddy">Contenido</a>
+      <ul class="other-section">
+         <li><a href="robtica_y_tinkercad.html" class="no-ch">Robótica y Tinkercad</a></li>
+         <li><a href="kit_de_robtica_impresin_3d_y_cdigo_c.html" class="no-ch">Kit de robótica, impresión 3D y código C++</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="actividades.html" class="current-page-parent daddy">Actividades</a>
+      <ul>
+         <li><a href="actividad_1.html" class="no-ch">Actividad 1</a></li>
+         <li><a href="actividad_2.html" class="no-ch">Actividad 2</a></li>
+         <li><a href="actividad_3.html" class="no-ch">Actividad 3</a></li>
+         <li id="active"><a href="actividad_4.html" class="active no-ch">Actividad 4</a></li>
+         <li><a href="actividad_5.html" class="no-ch">Actividad 5</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="cmo_utilizar_el_robot_spiderbot.html" class="no-ch">Cómo utilizar el robot SpiderBot</a></li>
+   <li><a href="referencias_bibliogrficas.html" class="no-ch">Referencias Bibliográficas</a></li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="actividad_3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="actividad_5.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Actividad 4</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id134">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Actividad 4.</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta134_123_2" class="block iDevice_content">
+<div class="exe-text"><p><strong>Creación y Movimiento de las Patas del Robot Araña.</strong></p>
+<p><strong>Objetivo: </strong>Crear las patas del robot araña utilizando servomotores y programarlas para simular un movimiento básico de caminata.</p>
+<p><strong>Materiales en Tinkercad:</strong></p>
+<ul>
+<li>4 Servomotores (representando las 4 patas)</li>
+<li>Arduino Uno R3</li>
+<li>Cables de conexión</li>
+</ul>
+<p><strong>Instrucciones:</strong></p>
+<ol>
+<li>Preparación del Circuito:</li>
+</ol>
+<ul>
+<li>Conecta 4 servomotores a los pines digitales 3, 5, 6, 9 del Arduino.</li>
+<li>Conecta cada servomotor a un pin de alimentación de 5V y a GND.</li>
+</ul>
+<ol>
+<li>Diseño del Movimiento:</li>
+</ol>
+<ul>
+<li>Vamos a hacer que las patas del robot se muevan en secuencia, como si estuviera caminando. El movimiento se logra ajustando el ángulo de cada servomotor.</li>
+</ul>
+<p> Código del movimiento de los servomotores:</p>
+<p>#include &lt;Servo.h&gt;</p>
+<p><br />// Definir los servomotores<br />Servo servo1, servo2, servo3, servo4;</p>
+<p><br />// Definir los LEDs (opcional)<br />int led1 = 2;<br />int led2 = 4;<br />int led3 = 7;<br />int led4 = 8;</p>
+<p><br />void setup() {<br />  // Conectar los servomotores a los pines<br />  servo1.attach(3);<br />  servo2.attach(5);<br />  servo3.attach(6);<br />  servo4.attach(9);<br />  <br />  // Configurar los pines de los LEDs<br />  pinMode(led1, OUTPUT);<br />  pinMode(led2, OUTPUT);<br />  pinMode(led3, OUTPUT);<br />  pinMode(led4, OUTPUT);<br />  <br />  // Poner las patas en su posición inicial<br />  servo1.write(90);  // Pata delantera izquierda<br />  servo2.write(90);  // Pata delantera derecha<br />  servo3.write(90);  // Pata trasera izquierda<br />  servo4.write(90);  // Pata trasera derecha<br />  <br />  delay(1000); // Espera de 1 segundo<br />}</p>
+<p><br />void loop() {<br />  // Secuencia de movimiento para simular la caminata</p>
+<p><br />  // Mover la pata delantera izquierda<br />  servo1.write(45);<br />  digitalWrite(led1, HIGH);  // Enciende LED de la pata<br />  delay(500);<br />  servo1.write(90);<br />  digitalWrite(led1, LOW);   // Apaga LED de la pata<br />  delay(500);<br />  <br />  // Mover la pata delantera derecha<br />  servo2.write(135);<br />  digitalWrite(led2, HIGH);  // Enciende LED de la pata<br />  delay(500);<br />  servo2.write(90);<br />  digitalWrite(led2, LOW);   // Apaga LED de la pata<br />  delay(500);<br />  <br />  // Mover la pata trasera izquierda<br />  servo3.write(45);<br />  digitalWrite(led3, HIGH);  // Enciende LED de la pata<br />  delay(500);<br />  servo3.write(90);<br />  digitalWrite(led3, LOW);   // Apaga LED de la pata<br />  delay(500);<br />  <br />  // Mover la pata trasera derecha<br />  servo4.write(135);<br />  digitalWrite(led4, HIGH);  // Enciende LED de la pata<br />  delay(500);<br />  servo4.write(90);<br />  digitalWrite(led4, LOW);   // Apaga LED de la pata<br />  delay(500);<br />}</p>
+<p><img src="img0.3.png" width="1167" height="525" alt="M1" /></p>
+<p><img src="img1.3.png" width="1167" height="528" alt="M2" /></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="actividad_3.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="actividad_5.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>
